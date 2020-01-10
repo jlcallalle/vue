@@ -10,6 +10,11 @@
 <body>
    <div id="app">
        <h1>{{title}}</h1>
+       <p>{{ 1 + 1 + 1 }}</p>
+       <p>{{ true || false }}</p>
+       <p>{{ true ? true : false }}</p>
+       <p>{{ 'string'.toUpperCase() }}</p>
+       <p>{{ JSON.stringify({ name: 'nacho'}) }}</p>
        <!-- la propiedad title tiene que esar definida en data-->
    </div>
    <script>
@@ -22,7 +27,7 @@
     //con vue, se cambiaria por que es reactivo
 
     //definimos la instancia new Vue, funcion constructora vue, recibe un objeto 
-    new Vue({
+    const app = new Vue({
         //pseudo selector css
         el: '#app',
         data () {
@@ -31,6 +36,22 @@
             }
         }
     })
+    // desde consola, podemos cambiar el valor del title, cada vez que el valor de la propiedad cambiar en la vista se visualiza
+    // app.title = 'chau vue'
+    // "chau vue"
+
    </script>
+   <h3> 1.- Introducción al Rendering Declarativo</h3>
+   <p>
+    two way data binding: es la forma como trabajar con el dom, 
+    tenemos una vista(html), estado (datos de js), 
+    en vuejs es el estado es que se encarga de decir a la vista cómo y cuando tiene que compilar, 
+    es la vista que tiene que avisar al browser que tiene nuevo html</p>
+
+    <h3>2.-Expresiones y Propiedades </h3> 
+    <p>Dentro de las expresiones se puede poner cualqueir codigo de js, menos if while, etc</p>
+
+
+   
 </body>
 </html>
