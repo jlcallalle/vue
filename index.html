@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+   <div id="app">
+       <h1>{{title}}</h1>
+       <!-- la propiedad title tiene que esar definida en data-->
+   </div>
+   <script>
+    //    let title = 'titulo';
+    //    const h1 = document.getElementById('h1');
+    //    h1.innerText = title;
+    //    title = 'chau';
+    //    h1.innerText = title;
+    //cada vez que cambiamos el valor de la propiedad title, tendriamos que cambiar la vista,
+    //con vue, se cambiaria por que es reactivo
+
+    //definimos la instancia new Vue, funcion constructora vue, recibe un objeto 
+    new Vue({
+        //pseudo selector css
+        el: '#app',
+        data () {
+            return {
+                title: 'Hola Vue!'
+            }
+        }
+    })
+   </script>
+</body>
+</html>
