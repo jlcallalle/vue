@@ -48,3 +48,5 @@ i, indices
 
 
 6.- Manejo de Eventos
+v-on:click="toggleShowPrices"
+v-show=showPrices (mostrar lista)
