@@ -1,0 +1,43 @@
+
+VUE
+--------
+1.- Rendering Declarativo y Manipulación de DOM
+- es la forma que nos propone vue para interactuar con el DOM (two way databanding)
+una vista: el html
+un estado: datos de js
+
+en vuejs es el estado el que se encarga de decir a la viste, cómo y cuando se tiene que compilar, eso 
+lo llama con una funcion llamada render. permite tener sincronizado en memoria con la vista.
+
+
+2.- Empresiones y Propiedades.
+En una empresion puede escribir cualquier codigo de js válido, se puede sumar, usar expresiones booleanas, funciones
+no se puede usar instrucciones, if, for, while.
+
+{{ 1 + 1 + 1 }}
+{{ true || false }}
+{{ true ? true : false }}
+{{ 'string'.toUpperCase() }}
+{{ JSON.stringify({ name: 'nacho'}) }}
+
+
+3.- Atributos Dinámicos (atributos-dinamicos.html)
+
+Directivas:
+ Es la herramieta que nos brinda Vue para poder manipular el DOM y manipularlo de forma declarativa,
+ ejm cambiar elemento html de forma dinamica, eliminar.
+
+Definiendo valores dinámicos:
+ v-nombredirectiva
+ v-bind:src="img"
+ v-bind:alt
+
+recordar: para trabajar en la aplicaciones de vue, tiene que estar dentro del scope 'app'
+
+
+4.- Directivas de flujo condicional
+
+v-if/else: remueve dom, si es algo fijo.
+v-show: oculta dom (display:none), si va cambiar constantemente
+
+

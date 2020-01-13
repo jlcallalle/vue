@@ -10,8 +10,16 @@
 <body>
 
     <div id="app">
-        <h1>{{name}}</h1>
-        <img v-bind:src="img" v-bind:alt="name">
+        <h1>{{name}}
+            <span v-if="changePercent > 0"> 👍</span>
+            <span v-else-if="changePercent < 0"> 👎</span>
+            <span v-else> 🤞 </span>
+
+            <span v-show="changePercent > 0"> 👍</span>
+            <span v-show="changePercent < 0"> 👎</span>
+            <span v-show="changePercent === 0"> 🤞 </span>
+        </h1>
+        <img v-bind:src="img" v-bind:alt="name" width="100"> 
         <!--
            las directivas se escriben:  v-bind:src  y v-bind:alt
         -->
@@ -24,8 +32,9 @@
 
             data () {
                 return {
-                    name: 'Bitcoin',
-                    img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png'
+                    name: 'Bitcoin ',
+                    img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+                    changePercent: 0
                 }
             }
 
