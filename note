@@ -36,8 +36,15 @@ recordar: para trabajar en la aplicaciones de vue, tiene que estar dentro del sc
 
 
 4.- Directivas de flujo condicional
-
 v-if/else: remueve dom, si es algo fijo.
 v-show: oculta dom (display:none), si va cambiar constantemente
 
 
+5.- Renderizado en listas
+v-for directiva: permite renderisas array o lista dentro de nuestro HTML.
+key si se modifica, vue puede seguir el trackeo.
+i, indices
+- permite recorrer array de objetos
+
+
+6.- Manejo de Eventos

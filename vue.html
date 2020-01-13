@@ -15,14 +15,23 @@
             <span v-else-if="changePercent < 0"> 👎</span>
             <span v-else> 🤞 </span>
 
+            <!-- 
             <span v-show="changePercent > 0"> 👍</span>
             <span v-show="changePercent < 0"> 👎</span>
-            <span v-show="changePercent === 0"> 🤞 </span>
+            <span v-show="changePercent === 0"> 🤞 </span> -->
         </h1>
         <img v-bind:src="img" v-bind:alt="name" width="100"> 
-        <!--
-           las directivas se escriben:  v-bind:src  y v-bind:alt
-        -->
+        <ul>
+            <!-- <li v-for="p in prices" v-bind:key="p"> -->
+            <li v-for="(p, i) in prices" v-bind:key="p">
+                {{ i }} - {{ p }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(p, i) in priceWithDays" v-bind:key="p.day">
+                {{ i }} - {{ p.day }} - {{ p.value }}
+            </li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -34,7 +43,17 @@
                 return {
                     name: 'Bitcoin ',
                     img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
-                    changePercent: 0
+                    changePercent: 0,
+                    prices: [8400,7900,8200,9000,9400,1000,2000],
+                    priceWithDays: [
+                        { day: 'lunes', value: 8400 },
+                        { day: 'martes', value: 8400 },
+                        { day: 'miercoles', value: 8400 },
+                        { day: 'jueves', value: 8400 },
+                        { day: 'viernes', value: 8400 },
+                        { day: 'sábado', value: 8400 },
+                        { day: 'domingo', value: 8400 }
+                    ]
                 }
             }
 
