@@ -21,7 +21,7 @@ no se puede usar instrucciones, if, for, while.
 {{ JSON.stringify({ name: 'nacho'}) }}
 
 
-3.- Atributos Dinámicos (atributos-dinamicos.html)
+3.- Atributos Dinámicos (vue.html)
 
 Directivas:
  Es la herramieta que nos brinda Vue para poder manipular el DOM y manipularlo de forma declarativa,
@@ -29,10 +29,9 @@ Directivas:
 
 Definiendo valores dinámicos:
  v-nombredirectiva
+
  v-bind:src="img"
  v-bind:alt
-
-recordar: para trabajar en la aplicaciones de vue, tiene que estar dentro del scope 'app'
 
 
 4.- Directivas de flujo condicional
@@ -50,3 +49,7 @@ i, indices
 6.- Manejo de Eventos
 v-on:click="toggleShowPrices"
 v-show=showPrices (mostrar lista)
+
+
+7.- Clases en tiempo real
+ v-bind:class="{ orange: p.value == price }"
