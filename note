@@ -51,5 +51,17 @@ v-on:click="toggleShowPrices"
 v-show=showPrices (mostrar lista)
 
 
-7.- Clases en tiempo real
+7.- Clases en tiempo real: v-bin con class
  v-bind:class="{ orange: p.value == price }"
+
+
+8.- Propiedades computadas,
+se genera apartir de otras propiedades.
+
+se agrega objeto:
+ computed: {
+    title() {
+        return `$(this.name) - $(this.symbol)`
+    }
+},
+la propiedad title, cambiara cada vez que cambien la propiedad name o symbol

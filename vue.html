@@ -21,8 +21,8 @@
     </style>
 </head>
 <body>
-
-    <div id="app"> <!-----Valores dinámicos: v-bind ----->
+    <!-----Valores dinámicos: v-bind ----->
+    <div id="app" v-bind:style="{ background: '#' + color }"> 
         <img 
         v-on:mouseover="toggleShowPrices"   
         v-on:mouseout="toggleShowPrices" 
@@ -31,7 +31,10 @@
 
 
         <!------ Directivas de flujo condicional: v-if ------>
-        <h1 v-bind:class="changePercent > 0 ? 'green' : 'red' ">{{name}}
+        <!-- <h1 v-bind:class="changePercent > 0 ? 'green' : 'red' ">{{name}} - {{symbol}} -->
+
+       <h1 v-bind:class="changePercent > 0 ? 'green' : 'red' ">{{ title }}
+
             <span v-if="changePercent > 0"> 👍</span>
             <span v-else-if="changePercent < 0"> 👎</span>
             <span v-else> 🤞 </span>
@@ -74,8 +77,10 @@
             data () {
                 return {
                     name: 'Bitcoin ',
+                    symbol: 'BTC',
                     img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
                     changePercent: -1,
+                    color: 'f4f4f4',
                     price: 8400,
                     prices: [8400,7900,8200,9000,9400,1000,2000],
                     priceWithDays: [
@@ -91,9 +96,15 @@
                     
                 }
             },
+            computed: {
+                title () {
+                    return `${this.name} - ${this.symbol}`
+                }
+            },
             methods: {
                 toggleShowPrices(){
-                    this.showPrices = !this.showPrices;
+                    this.showPrices = !this.showPrices
+                    this.color = this.color().split('').reverse().join('')
                 }
             }
 
