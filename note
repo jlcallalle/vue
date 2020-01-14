@@ -70,3 +70,8 @@ la propiedad title, cambiara cada vez que cambien la propiedad name o symbol
 Whatcher, a partir de un cambio de una variable, se dispara una funcion.
 el nombre tiene que ser igual al nombre de una propidad de data. 
 ejemplo: showPrices
+
+9.- Two Way Data Binding.
+v-model="value" |  {{ value }}
+
+Valor en tiempo real:

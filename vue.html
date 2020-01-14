@@ -48,6 +48,10 @@
 
         </h1>
 
+        <input type="number" v-model="value">
+        <span> {{ converteValue }}</span>
+       <!--<span> {{ value }}</span> --> 
+       
         <!-------- Renderizado en listas: v-for ---------->
         <!-- <ul>
             <li v-for="(p, i) in prices" v-bind:key="p">
@@ -80,6 +84,7 @@
                     symbol: 'BTC',
                     img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
                     changePercent: -1,
+                    value: 0,
                     color: 'f4f4f4',
                     price: 8400,
                     prices: [8400,7900,8200,9000,9400,1000,2000],
@@ -99,6 +104,12 @@
             computed: {
                 title () {
                     return `${this.name} - ${this.symbol}`
+                },
+                converteValue () {
+                    if(!this.value){
+                        return 0
+                    }
+                    return this.value / this.price
                 }
             },
             watch: {
