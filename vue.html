@@ -102,8 +102,9 @@
                 }
             },
             watch: {
-                showPrices () {
-                    console.log('aaa');
+                showPrices (newVal, oldVal) {
+                    console.log(newVal, oldVal);
+                    //console.log('aaa');
                 }
             },
             methods: {

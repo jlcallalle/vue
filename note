@@ -68,4 +68,5 @@ la propiedad title, cambiara cada vez que cambien la propiedad name o symbol
 
 
 Whatcher, a partir de un cambio de una variable, se dispara una funcion.
-el nombre tiene que ser igual al nombre de una propidad de data.
+el nombre tiene que ser igual al nombre de una propidad de data. 
+ejemplo: showPrices
