@@ -101,10 +101,15 @@
                     return `${this.name} - ${this.symbol}`
                 }
             },
+            watch: {
+                showPrices () {
+                    console.log('aaa');
+                }
+            },
             methods: {
                 toggleShowPrices(){
                     this.showPrices = !this.showPrices
-                    this.color = this.color().split('').reverse().join('')
+                    this.color = this.color.split('').reverse().join('')
                 }
             }
 
