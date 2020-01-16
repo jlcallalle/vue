@@ -21,30 +21,26 @@
     </style>
 </head>
 <body>
-    <!-----Valores dinámicos: v-bind ----->
     <div id="app" v-bind:style="{ background: '#' + color }"> 
-     
-        <!-- <coin-detail 
-        v-bind:img="img"
-        v-bind:name="name"
-        v-bind:price="price"
-        v-bind:title="title" 
-        v-bind:change-percent="changePercent"></coin-detail> -->
 
-        <coin-detail v-bind:coin="btc"></coin-detail>
-      
+        <coin-detail 
+          v-on:change-color="updateColor"
+          v-bind:coin="btc">
+          <template v-slot:text>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dicta soluta perspiciatis ab ut, nihil harum molestiae, commodi maxime explicabo inventore placeat possimus repudiandae voluptatem cum numquam necessitatibus excepturi quibusdam!</p>
+          </template>
+          <template v-slot:link>
+              <a href="#">Link</a>
+          </template>
+        </coin-detail>
 
-
-
-        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
 
-        Vue.component('CoinDetail', {  //parsea a <coin-detail></coin-detail>
+        Vue.component('CoinDetail', {  
 
-                //props: ['changePercent', 'title','img','name', 'price'],
                 props: ['coin'],
 
                 data () {
@@ -56,6 +52,8 @@
                 methods: {
                     toggleShowPrices(){
                         this.showPrices = !this.showPrices
+                        this.$emit('change-color',
+                          this.showPrices ? 'FF96C8': '3D3D3D')
                     }
                 },
                 computed: {
@@ -70,8 +68,6 @@
                     }
                 },
                 
-
-                /*Primero se define el*/
                 template: `
                     <div>
                         <img 
@@ -90,6 +86,9 @@
 
                         <input type="number" v-model="value">
                         <span> {{ converteValue }}</span>
+
+                        <slot name="text"></slot>
+                        <slot name="link"></slot>
 
                         <ul v-show=showPrices>
                             <li class="uppercase"
@@ -129,6 +128,14 @@
                     color: 'f4f4f4',
                 }
             },
+            methods: {
+                updateColor(color){
+                    this.color = color || this.color
+                        .split('')
+                        .reverse()
+                        .join('')
+                }
+            }
   
 
         })

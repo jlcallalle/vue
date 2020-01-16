@@ -92,11 +92,31 @@ Permite crear  componentes que se permite reutilizar
 1.- Crear componente Custom: componentes.html
 Vue.component('counter')
 
-2.- Comunicacion entre Componentes propiedades
+2.- Comunicacion entre Componentes: propiedades
 - Un componente padre puede enviar a componente hijos
 
 Pasos:
     - Crear em template con el html
     - Agregar parametros pros 
     - Agregar v-bind en componente: <coin-detail>
+
+comunicacion de padre a hiejo es propiedades
+
+3.- Comunicacione entre componentes: Eventos  componentes3.html
+comunicaciones de hijo a padre es con eventos.
+
+v-on
+el componente hijo no tiene a la propiedad: color 
+lo que se hara es que el componente hijo emita un evento 
+para avisarle al componente padre que tiene que modificar.
+
+toggleShowPrices(){
+    this.$emit('change-color')
+}
+ejecuta evento change-color, cada vez que se ejecuta ese método toggleShowPrices
+$emit es del core de vue.
+
+4.- Slots, APi de distribucion de contenido |  componentes3.html
+Recibir HTML desde el componente padre
+Componente padre inyecte html  a un componente hijo.
 
