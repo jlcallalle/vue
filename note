@@ -87,4 +87,16 @@ Directivas basicas.
 
 
 SISTEMA DE COMPONENTES
-1.- Crear componente Custom
+Permite crear  componentes que se permite reutilizar
+
+1.- Crear componente Custom: componentes.html
+Vue.component('counter')
+
+2.- Comunicacion entre Componentes propiedades
+- Un componente padre puede enviar a componente hijos
+
+Pasos:
+    - Crear em template con el html
+    - Agregar parametros pros 
+    - Agregar v-bind en componente: <coin-detail>
+
