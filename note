@@ -1,6 +1,10 @@
 
 VUE
 --------
+El sistema de componentes y rendering declarativo es el coreo de Vue.
+Vue ex, para estados muy grande
+Vue Router, para hacer single page.
+
 1.- Rendering Declarativo y Manipulación de DOM
 - es la forma que nos propone vue para interactuar con el DOM (two way databanding)
 una vista: el html

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+   <div id="app">
+       <h1>{{msg}}</h1>
+       <p>{{ 1 + 1 }}</p>
+       <p>{{ 'Hola' + 'Mundo'}}</p>
+       <p>{{ true ? true : false }}</p>
+       <p>{{ person.name }}</p>
+       <p>{{ person.name.toUpperCase() }}</p>
+       <p>{{ JSON.stringify(person)}}</p>   <!-- parse objeto a un string -->
+       <p>{{ true ? 'true' : 'false'}}</p>
+       <!-- No podemos usar condicionales, why, for, if, else-->
+   </div>
+   <script>
+
+    const app = new Vue({
+        el: '#app',
+        data () {
+            return {
+                msg: 'Hola Vue!',
+                person: {
+                    name: 'juan'
+                }
+            }
+        }
+    })
+   </script>
+
+   
+</body>
+</html>

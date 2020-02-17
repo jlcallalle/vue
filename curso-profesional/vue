@@ -1,0 +1,14 @@
+
+VUE
+--------
+El sistema de componentes y rendering declarativo es el coreo de Vue.
+
+
+Expresiones:
+son parametros que ponemos entre {}, permite representar en valor de nuestro view-model, 
+(rep operaciones aritmeticas, conquetenaciones de string, llamar funciones de metodos o objetos.
+
+Directivas: (viene de angular 1)
+Son atributos que podemos agregar al html, para aplica transformaciones a esos mismo elementos
+ejm:
+    v-show
