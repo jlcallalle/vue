@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
+    <p>{{ 1 + 1 }}</p>
+    <p>{{ 'Hola' + 'Mundo'}}</p>
+    <p>{{ true ? true : false }}</p>
+    <p>{{ person.name }}</p>
+    <p>{{ person.name.toUpperCase() }}</p>
+    <p>{{ JSON.stringify(person)}}</p>  
+    <p>{{ true ? 'true' : 'false'}}</p>
   </div>
 </template>
 
@@ -10,7 +16,10 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hola Vue.js'
+      msg: 'Hola Vue.js',
+       person: {
+          name: 'juan'
+      }
     }
   }
 }
