@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
-    <p>{{ 1 + 1 }}</p>
-    <p>{{ 'Hola' + 'Mundo'}}</p>
-    <p>{{ true ? true : false }}</p>
-    <p>{{ person.name }}</p>
-    <p>{{ person.name.toUpperCase() }}</p>
-    <p>{{ JSON.stringify(person)}}</p>  
-    <p>{{ true ? 'true' : 'false'}}</p>
+     <h1>{{ msg }}</h1>
+    <div class="contenido" v-show="mostrarContenido"> <!-- display none-->
+      <p>{{ 1 + 1 }}</p>
+      <p>{{ 'Hola' + 'Mundo'}}</p>
+      <p>{{ true ? true : false }}</p>
+      <p>{{ person.name }}</p>
+      <p>{{ person.name.toUpperCase() }}</p>|
+      <p>{{ JSON.stringify(person)}}</p>  
+      <p>{{ true ? 'true' : 'false'}}</p>
+    </div>
+    <p v-if="showValue"> {{ value }}</p>
+    <p v-else> {{ 'algo más' }}</p>
+    
+    <ul>
+    <li v-for="item in items" :key="item">
+      {{ item.mensaje }}
+    </li>
+    </ul>
+
   </div>
 </template>
 
@@ -17,9 +28,16 @@ export default {
   data () {
     return {
       msg: 'Hola Vue.js',
-       person: {
+      person: {
           name: 'juan'
-      }
+      },
+      mostrarContenido: false,
+      showValue: false,
+      value : 'algo',
+       items: [
+        { mensaje: 'Foo' },
+        { mensaje: 'Bar' }
+      ]
     }
   }
 }
