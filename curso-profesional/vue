@@ -12,3 +12,24 @@ Directivas: (viene de angular 1)
 Son atributos que podemos agregar al html, para aplica transformaciones a esos mismo elementos
 ejm:
     v-show
+
+
+sudo npm i -g @vue/cli
+sudo npm install -g @vue/cli-init
+vue init webpack-simple platzi-music, me pregunta
+
+? Project name platzi-music
+? Project description App curso vue.js
+? Author jorge <jlcallalle@gmail.com>
+? License MIT
+? Use sass? Yes
+
+   vue-cli · Generated "platzi-music".
+
+   To get started:
+   
+     cd platzi-music
+     npm install
+     npm run dev
+
+Vue -cli archivos:
